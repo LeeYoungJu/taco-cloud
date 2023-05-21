@@ -1,0 +1,41 @@
+server:
+  port: 8000
+
+spring:
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
+taco:
+  orders:
+    pageSize: 10
+
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
